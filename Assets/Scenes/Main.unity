@@ -213,6 +213,66 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1531298522659331094, guid: bd76811c6c14cec408f8a89810206e18, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531298522659331094, guid: bd76811c6c14cec408f8a89810206e18, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531298523069444764, guid: bd76811c6c14cec408f8a89810206e18, type: 3}
+      propertyPath: m_tilesSlideInSpeed
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531298523069444764, guid: bd76811c6c14cec408f8a89810206e18, type: 3}
+      propertyPath: m_cameraZoomOutSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531298523069444764, guid: bd76811c6c14cec408f8a89810206e18, type: 3}
+      propertyPath: m_cameraZoomOutCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531298523069444764, guid: bd76811c6c14cec408f8a89810206e18, type: 3}
+      propertyPath: m_cameraZoomOutCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531298523069444764, guid: bd76811c6c14cec408f8a89810206e18, type: 3}
+      propertyPath: m_cameraZoomOutCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531298523069444764, guid: bd76811c6c14cec408f8a89810206e18, type: 3}
+      propertyPath: m_cameraZoomOutCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531298523069444764, guid: bd76811c6c14cec408f8a89810206e18, type: 3}
+      propertyPath: m_cameraZoomOutCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531298523069444764, guid: bd76811c6c14cec408f8a89810206e18, type: 3}
+      propertyPath: m_cameraZoomOutCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531298523069444764, guid: bd76811c6c14cec408f8a89810206e18, type: 3}
+      propertyPath: m_cameraZoomOutCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531298523069444764, guid: bd76811c6c14cec408f8a89810206e18, type: 3}
+      propertyPath: m_cameraZoomOutCurve.m_Curve.Array.data[0].outSlope
+      value: -0.5921186
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531298523069444764, guid: bd76811c6c14cec408f8a89810206e18, type: 3}
+      propertyPath: m_cameraZoomOutCurve.m_Curve.Array.data[1].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531298523069444764, guid: bd76811c6c14cec408f8a89810206e18, type: 3}
+      propertyPath: m_cameraZoomOutCurve.m_Curve.Array.data[0].outWeight
+      value: 0.046653584
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531298523069444764, guid: bd76811c6c14cec408f8a89810206e18, type: 3}
+      propertyPath: m_cameraZoomOutCurve.m_Curve.Array.data[0].tangentMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1531298523069444765, guid: bd76811c6c14cec408f8a89810206e18, type: 3}
       propertyPath: m_Name
       value: Board
