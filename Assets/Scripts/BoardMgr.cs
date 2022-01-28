@@ -8,6 +8,7 @@ public class BoardMgr : MonoBehaviour {
 	[SerializeField] private IntRef m_worldMaxSize;
 	[SerializeField] private IntRef m_worldCurrentSize;
 	[SerializeField] private IntRef m_worldSizeIncrease;
+	[SerializeField] private RectRef m_boardBorders;
 
 	[SerializeField] private float m_tilesSlideInSpeed;
 	[SerializeField] private float m_cameraZoomOutSpeed;
@@ -30,6 +31,7 @@ public class BoardMgr : MonoBehaviour {
 			}
 		}
 		
+		m_boardBorders.SetValue(new Rect(transform.position.x - m_worldCurrentSize.value / 2f, transform.position.y - m_worldCurrentSize.value / 2f, m_worldCurrentSize, m_worldCurrentSize));
 	}
 
 	public void IncreaseBoard(){
@@ -137,5 +139,6 @@ public class BoardMgr : MonoBehaviour {
 			}
 			yield return null;
 		}
+		m_boardBorders.SetValue(new Rect(transform.position.x - m_worldCurrentSize.value / 2f, transform.position.y - m_worldCurrentSize.value / 2f, m_worldCurrentSize, m_worldCurrentSize));
 	}
 }
