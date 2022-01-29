@@ -77,14 +77,14 @@ public class BoardMgr : MonoBehaviour {
 		BuildBoard();
 	}
 
-	void Update(){
+	/*void Update(){
 		if(Input.GetKeyDown(KeyCode.Space)){
 			IncreaseBoard();
 			/*if(m_worldCurrentSize > Camera.main.orthographicSize * 2){
 				StartCoroutine(ZoomOutCamera(m_worldCurrentSize/2));
-			}*/
+			}*
 		}
-	}
+	}*/
 
 	IEnumerator SlideTilesIn(List<GameObject> tiles, List<Vector3> currentPositions, List<Vector3> targetPositions){
         float startTime = Time.time;

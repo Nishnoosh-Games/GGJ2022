@@ -14,14 +14,39 @@ public class PlayerCtrl : MonoBehaviour {
 
 	[SerializeField] private RectRef m_boardBorders;
 
+	[SerializeField] private GameObject m_projectilePrefab;
+
+	[Header("Fire Rate")]
+	[SerializeField] private FloatRef m_weaponBaseFireRate;
+	[SerializeField] private FloatRef m_weaponCurrentFireRate;
+	[SerializeField] private FloatRef m_weaponMaxFireRate;
+
+	[Header("Fire Lanes")]
+	[SerializeField] private FireLane[] m_firelanes;
+	private int m_currentFireLane = 3;
+	/*[SerializeField] private IntRef m_weaponBaseFireLanes;
+	[SerializeField] private IntRef m_weaponCurrentFireLanes;
+	[SerializeField] private IntRef m_weaponMaxFireLanes;*/
+
+	[Header("Projectile Speed")]
+	[SerializeField] private FloatRef m_weaponBaseSpeed;
+	[SerializeField] private FloatRef m_weaponCurrentSpeed;
+	[SerializeField] private FloatRef m_weaponMaxSpeed;
+
+	private float m_lastFire;
+
 	void Start(){
 		m_playerCurrentSpeed.SetValue(m_playerBaseSpeed.value);
+		m_weaponCurrentFireRate.SetValue(m_weaponBaseFireRate);
 	}
 
 	void Update(){
 		GetKeyMove();
 		LimitMove();
 		GetMouseAim();
+		if(Input.GetMouseButton(0)){
+			Fire();
+		}
 	}
 
 	private void GetKeyMove(){
@@ -51,13 +76,6 @@ public class PlayerCtrl : MonoBehaviour {
 		}else if(transform.position.y - 0.5f < m_boardBorders.value.yMin){
 			y = m_boardBorders.value.yMin + 0.5f;
 		}
-		//x = transform.position.x + 0.5f > m_boardBorders.value.xMax ? m_boardBorders.value.xMax - 0.5f : transform.position.x;
-		//x = transform.position.x - 0.5f < m_boardBorders.value.xMin ? m_boardBorders.value.xMin + 0.5f : transform.position.x;
-		//y = transform.position.y + 0.5f < m_boardBorders.value.yMax ? m_boardBorders.value.yMax - 0.5f : transform.position.y;
-		//y = transform.position.y - 0.5f > m_boardBorders.value.yMin ? m_boardBorders.value.yMin + 0.5f : transform.position.y;
-		//if(transform.position.x + 0.5f > m_boardBorders.value.xMax) x = m_boardBorders.value.xMax - 0.5f;
-		//if(transform.position.x - 0.5f < m_boardBorders.value.xMin) x = m_boardBorders.value.xMin + 0.5f;
-		//if(transform.position.y + 0.5f > m_boardBorders.value.yMax) y = m_boardBorders.value.yMax - 0.5f;
 		transform.position = new Vector3(x, y, -2);
 	}
 
@@ -67,5 +85,15 @@ public class PlayerCtrl : MonoBehaviour {
 		float angle = Mathf.Atan2(aimDir.y, aimDir.x) * Mathf.Rad2Deg;
 
 		m_aimTransform.transform.eulerAngles = new Vector3(0, 0, angle);
+	}
+
+	private void Fire(){
+		if(Time.time >= m_lastFire + m_weaponCurrentFireRate){
+			m_lastFire = Time.time;
+			Debug.Log("Fire");
+			for(int i = 0; i < m_firelanes[m_currentFireLane].muzzles.Length; i++){
+				TrashMan.spawn(m_projectilePrefab, m_firelanes[m_currentFireLane].muzzles[i].position, m_firelanes[m_currentFireLane].muzzles[i].rotation);
+			}
+		}
 	}
 }

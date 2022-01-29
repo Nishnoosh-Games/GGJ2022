@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2525ce47c7a19694586c80f7e30cb297, type: 3}
   m_Name: WeaponMaxSpeed
   m_EditorClassIdentifier: 
-  m_value: 0
+  m_value: 10
